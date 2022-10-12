@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//var sites: [Site]!
 
 class ViewController: UIViewController {
 
