@@ -8,11 +8,27 @@
 var site : Site!
 import UIKit
 
-class SiteTableViewController: UITableViewController {
-    let sites = readData()
+class SiteTableViewController: UITableViewController, UISearchBarDelegate {
+    var sites = readData()
+    var searching  = false
+    var finalSites = [Site]()
+    
+    // Declare  Second Array For Save Search Result
 
+    var searchSites: [String]!
+
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    @IBOutlet var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        
+        //searchSites = sites
+        finalSites = sites
 
         
     }
@@ -22,18 +38,21 @@ class SiteTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         // #warning Incomplete implementation, return the number of rows
-        print(sites.count)
-        return sites.count
+        print (finalSites.count)
+        return finalSites.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SiteTableViewCell
         
-        cell.nameLabe.text = sites[indexPath.row].name
-        cell.picView.image = sites[indexPath.row].image
-        cell.locationLabel.text = sites[indexPath.row].location
+        cell.nameLabe.text = finalSites[indexPath.row].name
+        cell.picView.image = finalSites[indexPath.row].image
+        cell.locationLabel.text = finalSites[indexPath.row].location
+        
+        //print(finalSites[indexPath.row].location)
 
         return cell
     }
@@ -43,5 +62,26 @@ class SiteTableViewController: UITableViewController {
         site = sites[indexPath.row]
         performSegue(withIdentifier: "show", sender: self)
     }
+    
+    // MARK: - SEARCH BAR DELEGATE METHOD FUNCTION
+
+       
+
+       
+       
+
+       func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+
+       {
+           finalSites = Site.searchEventByName(sitename: searchText)
+           searching = true
+           if (searchText == ""){
+               searching = false
+               table.reloadData()
+           }
+           
+
+
+       }
 
 }

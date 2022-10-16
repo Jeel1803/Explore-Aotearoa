@@ -8,12 +8,21 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBAction func logOutButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "main", sender: self)
 
+
+        
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
+ 
     
 
     /*

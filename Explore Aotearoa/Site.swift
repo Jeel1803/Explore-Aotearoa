@@ -37,5 +37,19 @@ class Site: NSObject, NSCoding
        self.image = pic
    }
    
+    
+    public static func searchEventByName(sitename : String ) -> [Site]
+    {
+        let events = readData()
+        var resultEvents = [Site]()
+        for e in events {
+            if (e.name.uppercased().contains(sitename.uppercased())){
+                resultEvents.append(e)
+                //return resultEvents
+            }
+        }
+        
+        return resultEvents
+    }
 
 }

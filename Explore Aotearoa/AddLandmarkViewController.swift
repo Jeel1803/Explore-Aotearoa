@@ -34,14 +34,15 @@ func readData() -> [Site]
 class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var decriptionTextView: UITextView!
+    
     @IBOutlet weak var picView: UIImageView!
     
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var decriptionTextView: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //sites = [Site]()
+        
         // Do any additional setup after loading the view.
     }
     

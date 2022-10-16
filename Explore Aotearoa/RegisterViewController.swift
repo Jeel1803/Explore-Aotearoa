@@ -14,7 +14,14 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!{
+        didSet {
+        let redPlaceholderText = NSAttributedString(string: "Please enter your Password",
+                                                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
+        passwordTextField.attributedPlaceholder = redPlaceholderText
+    }
+}
 
 
     override func viewDidLoad() {
@@ -33,11 +40,12 @@ class RegisterViewController: UIViewController {
         let password = passwordTextField.text!
         
         
+        
         let user = User(name: name, address: address, email: email, phone: phone, username: username, password: password)
         let data = try! NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
         
         UserDefaults.standard.set(data, forKey: "user")
-        print("Stage 1 User added successfully")
+        //print("Stage 1 User added successfully")
         
         
         
@@ -46,6 +54,12 @@ class RegisterViewController: UIViewController {
         do {
            validation = try inputValidation(user: user)
             showMessage(title: "Success", msg: "User Added Succesfully")
+            nameTextField.text! = ""
+            addressTextField.text! = ""
+            emailTextField.text! = ""
+            phoneTextField.text! = ""
+            usernameTextField.text! = ""
+            passwordTextField.text! = ""
 
         }
         catch let error as User.listOfErrors  {
@@ -80,9 +94,6 @@ class RegisterViewController: UIViewController {
         if(NSPredicate(format: "Self Matches %@", nameSyntax).evaluate(with: user.name) == false){
             throw User.listOfErrors.invalidNameInput
         }
-        //if(NSPredicate(format: "Self Matches %@", phoneSyntax).evaluate(with: user.phone) == false){
-          //  throw User.listOfErrors.invalidPhoneInput
-        //}
         if(NSPredicate(format: "Self Matches %@", emailSyntax).evaluate(with: user.email) == false){
             throw User.listOfErrors.invalidEmailInput
         }

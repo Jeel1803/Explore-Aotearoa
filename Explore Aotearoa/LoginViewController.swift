@@ -11,7 +11,14 @@ class LoginViewController: UIViewController {
 
     
     @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!{
+        didSet {
+            let redPlaceholderText = NSAttributedString(string: "Please enter your Password",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            passwordTextField.attributedPlaceholder = redPlaceholderText
+        }
+    }
     
 
     override func viewDidLoad() {
@@ -33,12 +40,6 @@ class LoginViewController: UIViewController {
                 
                 print(user.name)
                 performSegue(withIdentifier: "home", sender: self)
-
-               // let data = try! NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
-                //UserDefaults.standard.set(data, forKey: "currentUser")
-                //let story = UIStoryboard(name: "Main", bundle: nil)
-                //let controller = story.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-                //self.present(controller, animated: true, completion: nil);                //showMessage(title: "Success", msg: "Welcome" + user.name)
                 
         }
             else{
