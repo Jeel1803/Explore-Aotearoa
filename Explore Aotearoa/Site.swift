@@ -40,16 +40,15 @@ class Site: NSObject, NSCoding
     
     public static func searchEventByName(sitename : String ) -> [Site]
     {
-        let events = readData()
-        var resultEvents = [Site]()
-        for e in events {
+        let sites = readData()
+        var resultSite = [Site]()
+        for e in sites {
             if (e.name.uppercased().contains(sitename.uppercased())){
-                resultEvents.append(e)
-                //return resultEvents
+                resultSite.append(e)
             }
         }
         
-        return resultEvents
+        return resultSite
     }
 
 }

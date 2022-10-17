@@ -15,7 +15,6 @@ class SiteTableViewController: UITableViewController, UISearchBarDelegate {
     
     // Declare  Second Array For Save Search Result
 
-    var searchSites: [String]!
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -28,7 +27,7 @@ class SiteTableViewController: UITableViewController, UISearchBarDelegate {
         searchBar.delegate = self
         
         //searchSites = sites
-        finalSites = sites
+       finalSites = sites
 
         
     }
@@ -38,7 +37,6 @@ class SiteTableViewController: UITableViewController, UISearchBarDelegate {
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         // #warning Incomplete implementation, return the number of rows
         print (finalSites.count)
         return finalSites.count
@@ -46,6 +44,7 @@ class SiteTableViewController: UITableViewController, UISearchBarDelegate {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SiteTableViewCell
         
         cell.nameLabe.text = finalSites[indexPath.row].name
@@ -77,9 +76,9 @@ class SiteTableViewController: UITableViewController, UISearchBarDelegate {
            searching = true
            if (searchText == ""){
                searching = false
-               table.reloadData()
+               finalSites = sites
            }
-           
+           table.reloadData()
 
 
        }
