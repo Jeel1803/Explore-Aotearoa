@@ -13,10 +13,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet {
-            let redPlaceholderText = NSAttributedString(string: "Please enter your Password",
+            let plText = NSAttributedString(string: "Please enter your Password",
                                                         attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
             
-            passwordTextField.attributedPlaceholder = redPlaceholderText
+            passwordTextField.attributedPlaceholder = plText
         }
     }
     
@@ -40,7 +40,9 @@ class LoginViewController: UIViewController {
                 
                 print(user.name)
                 performSegue(withIdentifier: "home", sender: self)
-                
+                usernameTextField.placeholder = "Please Enter your Username"
+                passwordTextField.placeholder = "Please Enter your Password"
+
         }
             else{
             throw User.listOfErrors.loginFailed

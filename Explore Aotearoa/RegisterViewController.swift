@@ -54,12 +54,13 @@ class RegisterViewController: UIViewController {
         do {
            validation = try inputValidation(user: user)
             showMessage(title: "Success", msg: "User Added Succesfully")
-            nameTextField.text! = ""
-            addressTextField.text! = ""
-            emailTextField.text! = ""
-            phoneTextField.text! = ""
-            usernameTextField.text! = ""
-            passwordTextField.text! = ""
+            nameTextField.placeholder = "Please enter your Name"
+            addressTextField.placeholder = "Please enter your Name"
+            emailTextField.placeholder = "Please enter your Email"
+            phoneTextField.placeholder = "Please enter your Phone"
+            usernameTextField.placeholder = "Please enter your Username"
+            passwordTextField.placeholder = "Please enter your Password"
+            
 
         }
         catch let error as User.listOfErrors  {

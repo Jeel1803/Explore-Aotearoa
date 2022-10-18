@@ -50,5 +50,11 @@ class Site: NSObject, NSCoding
         
         return resultSite
     }
-
+    enum listOfErrors : String, Error {
+        case emptyField = "Please Fill all the Details"
+        case invalidNameInput = "Please Enter Valid Name"
+        case invalidLocationInput = "Please Enter Valid Home Location"
+        case invalidDesInput = "Please Enter Valid Email Description"
+       
+    }
 }

@@ -16,6 +16,7 @@
 		1C649DFF28F53C7500915470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C649DFD28F53C7500915470 /* Main.storyboard */; };
 		1C649E0128F53C7700915470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C649E0028F53C7700915470 /* Assets.xcassets */; };
 		1C649E0428F53C7700915470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C649E0228F53C7700915470 /* LaunchScreen.storyboard */; };
+		1C6C98C528FE489700A53742 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6C98C428FE489700A53742 /* DateViewController.swift */; };
 		1C87F19E28F5F51600D40CAE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C87F19D28F5F51600D40CAE /* LoginViewController.swift */; };
 		1C87F1A028F5F62C00D40CAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C87F19F28F5F62C00D40CAE /* HomeViewController.swift */; };
 		1C87F1A228F5FFC300D40CAE /* AddLandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C87F1A128F5FFC300D40CAE /* AddLandmarkViewController.swift */; };
@@ -36,6 +37,7 @@
 		1C649E0028F53C7700915470 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C649E0328F53C7700915470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C649E0528F53C7700915470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C6C98C428FE489700A53742 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		1C87F19D28F5F51600D40CAE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1C87F19F28F5F62C00D40CAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1C87F1A128F5FFC300D40CAE /* AddLandmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLandmarkViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				1C63A0E228F64DDE0085155F /* SiteTableViewController.swift */,
 				1C63A0E428F64E8E0085155F /* SiteTableViewCell.swift */,
 				1C63A0E628F666ED0085155F /* ShowDetailViewController.swift */,
+				1C6C98C428FE489700A53742 /* DateViewController.swift */,
 			);
 			path = "Explore Aotearoa";
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				1C63A0E528F64E8E0085155F /* SiteTableViewCell.swift in Sources */,
 				1C649DFC28F53C7500915470 /* ViewController.swift in Sources */,
 				1C649DF828F53C7500915470 /* AppDelegate.swift in Sources */,
+				1C6C98C528FE489700A53742 /* DateViewController.swift in Sources */,
 				1C649DFA28F53C7500915470 /* SceneDelegate.swift in Sources */,
 				1C87F1A428F6107400D40CAE /* Site.swift in Sources */,
 				1C87F1A228F5FFC300D40CAE /* AddLandmarkViewController.swift in Sources */,
