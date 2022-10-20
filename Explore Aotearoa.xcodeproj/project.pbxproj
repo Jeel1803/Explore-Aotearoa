@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C531CD52900B49B00C19CD4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C531CD42900B49B00C19CD4 /* SearchViewController.swift */; };
 		1C63A0E328F64DDE0085155F /* SiteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63A0E228F64DDE0085155F /* SiteTableViewController.swift */; };
 		1C63A0E528F64E8E0085155F /* SiteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63A0E428F64E8E0085155F /* SiteTableViewCell.swift */; };
 		1C63A0E728F666ED0085155F /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63A0E628F666ED0085155F /* ShowDetailViewController.swift */; };
@@ -26,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C531CD42900B49B00C19CD4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1C63A0E228F64DDE0085155F /* SiteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteTableViewController.swift; sourceTree = "<group>"; };
 		1C63A0E428F64E8E0085155F /* SiteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteTableViewCell.swift; sourceTree = "<group>"; };
 		1C63A0E628F666ED0085155F /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 				1C63A0E228F64DDE0085155F /* SiteTableViewController.swift */,
 				1C63A0E428F64E8E0085155F /* SiteTableViewCell.swift */,
 				1C63A0E628F666ED0085155F /* ShowDetailViewController.swift */,
-				1C531CD42900B49B00C19CD4 /* SearchViewController.swift */,
 			);
 			path = "Explore Aotearoa";
 			sourceTree = "<group>";
@@ -176,7 +173,6 @@
 				1C649DFA28F53C7500915470 /* SceneDelegate.swift in Sources */,
 				1C87F1A428F6107400D40CAE /* Site.swift in Sources */,
 				1C87F1A228F5FFC300D40CAE /* AddLandmarkViewController.swift in Sources */,
-				1C531CD52900B49B00C19CD4 /* SearchViewController.swift in Sources */,
 				1CF0C69A28F5F1DC00F9969F /* User.swift in Sources */,
 				1C87F1A028F5F62C00D40CAE /* HomeViewController.swift in Sources */,
 				1C63A0E328F64DDE0085155F /* SiteTableViewController.swift in Sources */,

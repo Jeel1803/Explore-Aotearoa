@@ -10,7 +10,14 @@ import UIKit
 class LoginViewController: UIViewController {
 
     
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!{
+        didSet {
+            let plText = NSAttributedString(string: "Please enter your Nemw",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            usernameTextField.attributedPlaceholder = plText
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet {
             let plText = NSAttributedString(string: "Please enter your Password",

@@ -9,11 +9,52 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!{
+        didSet {
+            let plText = NSAttributedString(string: "Please enter your name",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            nameTextField.attributedPlaceholder = plText
+        }
+    }
+    
     @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
+    {
+        didSet {
+            let plText = NSAttributedString(string: "Please enter your address",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            addressTextField.attributedPlaceholder = plText
+        }
+    }
+    
+    @IBOutlet weak var phoneTextField: UITextField!{
+        didSet {
+            let plText = NSAttributedString(string: "Please enter your phone",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            phoneTextField.attributedPlaceholder = plText
+        }
+    }
+    
+    @IBOutlet weak var emailTextField: UITextField!{
+        didSet {
+            let plText = NSAttributedString(string: "Please enter your email",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            emailTextField.attributedPlaceholder = plText
+        }
+    }
+    
+    @IBOutlet weak var usernameTextField: UITextField!{
+        didSet {
+            let plText = NSAttributedString(string: "Please enter your username",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            usernameTextField.attributedPlaceholder = plText
+        }
+    }
+    
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet {
         let redPlaceholderText = NSAttributedString(string: "Please enter your Password",
@@ -53,14 +94,14 @@ class RegisterViewController: UIViewController {
         var validation = false
         do {
            validation = try inputValidation(user: user)
+            nameTextField.text = ""
+            addressTextField.text = ""
+            emailTextField.text = ""
+            phoneTextField.text = ""
+            usernameTextField.text = ""
+            passwordTextField.text = ""
             showMessage(title: "Success", msg: "User Added Succesfully")
-            nameTextField.placeholder = "Please enter your Name"
-            addressTextField.placeholder = "Please enter your Name"
-            emailTextField.placeholder = "Please enter your Email"
-            phoneTextField.placeholder = "Please enter your Phone"
-            usernameTextField.placeholder = "Please enter your Username"
-            passwordTextField.placeholder = "Please enter your Password"
-            
+
 
         }
         catch let error as User.listOfErrors  {

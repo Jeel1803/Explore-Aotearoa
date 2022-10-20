@@ -33,12 +33,33 @@ func readData() -> [Site]
 
 class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!{
+        didSet {
+            let plText = NSAttributedString(string: "Name",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            nameTextField.attributedPlaceholder = plText
+        }
+    }
     
     @IBOutlet weak var picView: UIImageView!
     
-    @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var decriptionTextView: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!{
+        didSet {
+            let plText = NSAttributedString(string: "Location",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            locationTextField.attributedPlaceholder = plText
+        }
+    }
+    @IBOutlet weak var decriptionTextView: UITextField!{
+        didSet {
+            let plText = NSAttributedString(string: "Description",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            decriptionTextView.attributedPlaceholder = plText
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +81,7 @@ class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelega
         let formatter = DateFormatter()
         formatter.timeZone = .current
         formatter.locale = .current
-        formatter.dateFormat = "dd/mm/yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
        // site.date = formatter.string(from: date)
 
         let site = Site(name: nameTextField.text!, location: locationTextField.text!, des: decriptionTextView.text!, date : formatter.string(from: date), pic: picView.image!)
