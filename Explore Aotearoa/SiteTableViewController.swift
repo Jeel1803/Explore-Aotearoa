@@ -28,6 +28,8 @@ class SiteTableViewController: UITableViewController, UISearchBarDelegate {
         
         //searchSites = sites
        finalSites = sites
+        
+        
 
         
     }
@@ -69,9 +71,11 @@ class SiteTableViewController: UITableViewController, UISearchBarDelegate {
        
        
 
-       func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
 
        {
+           
+           
            finalSites = Site.searchEventByName(sitename: searchText)
            searching = true
            if (searchText == ""){

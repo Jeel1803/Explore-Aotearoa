@@ -13,8 +13,6 @@ class SiteTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabe: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

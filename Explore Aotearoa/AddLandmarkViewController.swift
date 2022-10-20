@@ -56,7 +56,14 @@ class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelega
         present(picker, animated: true, completion: nil)
     }
     @IBAction func addSite(_ sender: UIButton) {
-        let site = Site(name: nameTextField.text!, location: locationTextField.text!, des: decriptionTextView.text!, date: Date(), pic: picView.image!)
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+        formatter.locale = .current
+        formatter.dateFormat = "dd/mm/yyyy"
+       // site.date = formatter.string(from: date)
+
+        let site = Site(name: nameTextField.text!, location: locationTextField.text!, des: decriptionTextView.text!, date : formatter.string(from: date), pic: picView.image!)
         var sites = readData()
         sites.append(site)
         print("Append Succesfully")

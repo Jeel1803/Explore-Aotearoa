@@ -10,7 +10,7 @@ import Foundation
 class Site: NSObject, NSCoding
 {
     var name : String
-    var date : Date
+    var date : String
     var location : String
     var des : String
     var image : UIImage
@@ -25,12 +25,12 @@ class Site: NSObject, NSCoding
     
     required  init?(coder: NSCoder) {
         self.name = coder.decodeObject(forKey: "name") as! String
-        self.date = coder.decodeObject(forKey: "date") as! Date
+        self.date = coder.decodeObject(forKey: "date") as! String
         self.location = coder.decodeObject(forKey: "location") as! String
         self.des = coder.decodeObject(forKey: "description") as! String
         self.image = coder.decodeObject(forKey: "image") as! UIImage
     }
-    init(name:String,location:String,des:String,date:Date,pic :UIImage)
+    init(name:String,location:String,des:String,date:String,pic :UIImage)
    {
        self.name = name; self.location = location;
        self.date = date; self.des = des
@@ -38,17 +38,18 @@ class Site: NSObject, NSCoding
    }
    
     
-    public static func searchEventByName(sitename : String ) -> [Site]
+    public static func searchEventByName(sitename : String) -> [Site]
     {
         let sites = readData()
         var resultSite = [Site]()
-        for e in sites {
-            if (e.name.uppercased().contains(sitename.uppercased())){
-                resultSite.append(e)
+        for s in sites {
+            if (s.name.uppercased().contains(sitename.uppercased()) || s.date.contains(sitename.uppercased())){
+                resultSite.append(s)
             }
         }
         
         return resultSite
     }
+    
    
 }
