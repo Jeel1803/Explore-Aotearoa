@@ -69,14 +69,14 @@ class SiteTableViewController: UITableViewController, UISearchBarDelegate {
        
 
        
-       
+       //code to search data as per the text input in the searchbar
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
 
        {
            
            
-           finalSites = Site.searchEventByName(sitename: searchText)
+           finalSites = Site.searchEventByName(searchString: searchText)
            searching = true
            if (searchText == ""){
                searching = false

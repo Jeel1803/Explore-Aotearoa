@@ -7,9 +7,12 @@
 
 import UIKit
 
+
+
+
 class LoginViewController: UIViewController {
 
-    
+    //cod to display placeholder
     @IBOutlet weak var usernameTextField: UITextField!{
         didSet {
             let plText = NSAttributedString(string: "Please enter your Nemw",
@@ -47,27 +50,22 @@ class LoginViewController: UIViewController {
                 
                 print(user.name)
                 performSegue(withIdentifier: "home", sender: self)
-                usernameTextField.placeholder = "Please Enter your Username"
-                passwordTextField.placeholder = "Please Enter your Password"
+                usernameTextField.text = ""
+                passwordTextField.text = ""
 
         }
             else{
             throw User.listOfErrors.loginFailed
         }
         }catch let error as User.listOfErrors{
-            showMessage(title: "Authentication Failed", msg: error.rawValue)
+            showMessage(title: "Authentication Failed", msg: error.rawValue, self)
         }catch{}
 
         
     }
     
     
-    func showMessage(title:String ,msg: String){
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
+   
     
     
     

@@ -9,6 +9,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    //code to display placeholder name in the textfield.
+    
     @IBOutlet weak var nameTextField: UITextField!{
         didSet {
             let plText = NSAttributedString(string: "Please enter your name",
@@ -86,7 +88,6 @@ class RegisterViewController: UIViewController {
         let data = try! NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
         
         UserDefaults.standard.set(data, forKey: "user")
-        //print("Stage 1 User added successfully")
         
         
         
@@ -100,13 +101,13 @@ class RegisterViewController: UIViewController {
             phoneTextField.text = ""
             usernameTextField.text = ""
             passwordTextField.text = ""
-            showMessage(title: "Success", msg: "User Added Succesfully")
+            showMessage(title: "Success", msg: "User Added Succesfully", self)
 
 
         }
         catch let error as User.listOfErrors  {
             
-            showMessage(title: "Input Error", msg: error.rawValue)
+            showMessage(title: "Input Error", msg: error.rawValue, self)
             print(error.rawValue)
             return
         }
@@ -116,13 +117,10 @@ class RegisterViewController: UIViewController {
 
     }
     
-    func showMessage(title:String ,msg: String){
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
     
+    
+    
+    //input validation using regex
     
     func inputValidation(user : User) throws -> Bool{
         let nameSyntax = "[a-zA-z ]*"

@@ -48,6 +48,8 @@ class User: NSObject, NSCoding{
         return "Name: \(name) , Address: \(address), Email: \(email),Phone: \(phone), Username: \(username), Password: \(password) "
     }
     
+    //list of error to display when validation function is called
+    
     enum listOfErrors : String, Error {
         case emptyField = "Please Fill all the Details"
         case invalidNameInput = "Please Enter Valid Name"

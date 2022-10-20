@@ -6,18 +6,12 @@
 //
 
 import UIKit
+//creating a list
 var sites = [Site]()
 
-func showMessage(msg : String, controller : UIViewController)
-{
-    let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
-    let action = UIAlertAction(title: "OK", style: .default, handler: {
-        action in
-        controller.dismiss(animated: true, completion: nil)
-    })
-    alert.addAction(action)
-    controller.present(alert, animated: true, completion: nil)
-}
+
+
+//function to read the data entered by the user and store it in userdefault
 func readData() -> [Site]
 {
     if UserDefaults.standard.value(forKey: "sites") != nil
@@ -30,6 +24,8 @@ func readData() -> [Site]
         return [Site]()
     }
 }
+
+
 
 class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -92,7 +88,7 @@ class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelega
         UserDefaults.standard.set(data, forKey: "sites")
         
         print(sites)
-        showMessage(msg: "New Site Added Successfully", controller: self)
+        showMessage(title: "Success", msg: "New Site Added Successfully", self)
         nameTextField.text = ""
         locationTextField.text = ""
         decriptionTextView.text = ""

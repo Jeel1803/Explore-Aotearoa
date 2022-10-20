@@ -37,13 +37,13 @@ class Site: NSObject, NSCoding
        self.image = pic
    }
    
-    
-    public static func searchEventByName(sitename : String) -> [Site]
+    //function to search the stored data from userdefault
+    public static func searchEventByName(searchString : String) -> [Site]
     {
         let sites = readData()
         var resultSite = [Site]()
         for s in sites {
-            if (s.name.uppercased().contains(sitename.uppercased()) || s.date.contains(sitename.uppercased())){
+            if (s.name.uppercased().contains(searchString.uppercased()) || s.date.contains(searchString.uppercased())){
                 resultSite.append(s)
             }
         }
